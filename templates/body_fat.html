@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="/static/images/logo.png" alt="" style="width: 170px; height: 50px; border-radius: 30%">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            </ul>
+    
+            <div class="text-end">
+              <a href="\"><button type="button" class="btn btn-warning">Home</button></a>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <section class="main_heading my-5">
+        <div class="text-center">
+            <h1 class="display-4">Body Fat Calculator</h1>
+            <hr class="w-25 mx-auto"></hr>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="col-xxl-8 col-10 col-md-8 mx-auto my-5">
+          <form class="row g-3" action="/body_fat" method="POST">
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Age</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="age" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Weight (in Pounds.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="weight" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Height (in inches.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="height" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Neck (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="neck" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Chest (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="chest" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Abdomen (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="abdomen" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Hip (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="hip" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Thigh (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="thigh" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Knee (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="knee" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Ankle (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)"name="ankle" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Biceps (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="biceps" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Forearm (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="forearm" required>
+            </div>
+            <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Wrist (in cm.)</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="wrist" required>
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+            <button class="btn btn-info" type="submit" style="margin: 10px;">Calculate</button>
+            </div>
+            </form>
+
+            <h5 class="card-title d-flex justify-content-center align-items-center flex-column" style="color: red;">{{result}}</h5>
+        </div>
+    </div>
+    <div class="text-center">
+        <p>© Copyright www.Mo-fit.in All Rights Reserved.</p>
+      </div>
+</body>
+</html>

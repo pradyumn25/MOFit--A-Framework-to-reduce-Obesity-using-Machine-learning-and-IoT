@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Macros Calculator</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="/static/styles1.css" />
+        <script src="/static/store.js" async></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+        <header class="p-3 bg-dark text-white">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img src="/static/images/logo.png" alt="" style="width: 170px; height: 50px; border-radius: 30%">
+                  <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+        
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                </ul>
+        
+                <div class="text-end">
+                  <a href="\"><button type="button" class="btn btn-warning">Home</button></a>
+                </div>
+              </div>
+            </div>
+        </header>
+
+        <section class="main_heading my-5">
+            <div class="text-center">
+                <h5 class="display-4">Calories Calculator</h5>
+                <hr class="w-25 mx-auto"></hr>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="col-xxl-8 col-10 col-md-8 mx-auto my-5">
+              <form class="row g-3" action="/store" method="POST">
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Age</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="age" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Height (in cm.)</label>
+                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="height" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Weight (in Kg.)</label>
+                    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="weight" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationDefault02" class="form-label">Gender</label>
+                    <select class="form-select" aria-label="Default select example" name="gender"> 
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+                
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                <button class="btn btn-info" type="submit" style="margin: 10px;">Calculate</button>
+                </div>
+                </form>
+    
+                <h5 class="card-title d-flex justify-content-center align-items-center flex-column" style="color: red;">{{result}}</h5>
+            </div>
+        </div>
+
+        <section class="main_heading my-5">
+            <div class="text-center">
+                <h1 class="display-4">Plan Your Diet With Macros Calculator</h1>
+                <hr class="w-25 mx-auto"></hr>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onclick="display()">
+                    Fruits
+                </button>
+            </div>
+            
+            <div class="shop-items active" id="n1active">
+                <div class="shop-item">
+                    <span class="shop-item-title">Apple</span>
+                    <img class="shop-item-image" src="/static/images/apple.jpg">
+                    <div class="shop-item-details">
+                        <span>Calories</span>
+                        <span class="shop-item-price">52</span>
+                        <br>
+                        <span>Protein</span>
+                        <span class="shop-item-prices">0.3</span>
+                        <br>
+                        <span>Carbs</span>
+                        <span class="shop-item-pricess">13.8</span>
+                        <br>
+                        <span>Fat</span>
+                        <span class="shop-item-pricesss">0.2</span>
+                        <br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD </button>
+                      </div>
+                  </div>
+                  <div class="shop-item">
+                        <span class="shop-item-title">Banana</span>
+                        <img class="shop-item-image" src="/static/images/banana.jpg">
+                        <div class="shop-item-details">
+                            <span>Calories</span>
+                            <span class="shop-item-price">95</span>
+                            <br>
+                            <span>Protein</span>
+                            <span class="shop-item-prices">1</span>
+                            <br>
+                            <span>Carbs</span>
+                            <span class="shop-item-pricess">20</span>
+                            <br>
+                            <span>Fat</span>
+                            <span class="shop-item-pricesss">0</span>
+                            <br>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD </button>
+
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                          <span class="shop-item-title">Orange</span>
+                          <img class="shop-item-image" src="/static/images/orange.jpg">
+                          <div class="shop-item-details">
+                              <span>Calories</span>
+                              <span class="shop-item-price">51</span>
+                              <br>
+                              <span>Protein</span>
+                              <span class="shop-item-prices">0</span>
+                              <br>
+                              <span>Carbs</span>
+                              <span class="shop-item-pricess">13</span>
+                              <br>
+                              <span>Fat</span>
+                              <span class="shop-item-pricesss">0</span>
+                              <br>
+                              <button class="btn btn-primary shop-item-button" type="button">ADD </button>
+
+                          </div>
+                      </div>
+                      <div class="shop-item">
+                            <span class="shop-item-title">Kiwi</span>
+                            <img class="shop-item-image" src="/static/images/kiwi.jpg">
+                            <div class="shop-item-details">
+                                <span>Calories</span>
+                                <span class="shop-item-price">61</span>
+                                <br>
+                                <span>Protein</span>
+                                <span class="shop-item-prices">1</span>
+                                <br>
+                                <span>Carbs</span>
+                                <span class="shop-item-pricess">15</span>
+                                <br>
+                                <span>Fat</span>
+                                <span class="shop-item-pricesss">1</span>
+                                <br>
+                                <button class="btn btn-primary shop-item-button" type="button">ADD </button>
+
+                            </div>
+                        </div>
+                        <div class="shop-item">
+                              <span class="shop-item-title">Avocado</span>
+                              <img class="shop-item-image" src="/static/images/avacado.jpg">
+                              <div class="shop-item-details">
+                                  <span>Calories</span>
+                                  <span class="shop-item-price">160</span>
+                                  <br>
+                                  <span>Protein</span>
+                                  <span class="shop-item-prices">2</span>
+                                  <br>
+                                  <span>Carbs</span>
+                                  <span class="shop-item-pricess">8.5</span>
+                                  <br>
+                                  <span>Fat</span>
+                                  <span class="shop-item-pricesss">14.7</span>
+                                  <br>
+                                  <button class="btn btn-primary shop-item-button" type="button">ADD </button>
+
+                              </div>
+                          </div>
+
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" onclick="display2()" style="margin: 10px;">
+                    Dairy Products
+                </button>
+            </div>
+            <div class="shop-items active" id="n2active">
+                <div class="shop-item">
+                    <span class="shop-item-title">Paneer</span>
+                    <img class="shop-item-image" src="/static/images/paneer.jpg">
+                    <div class="shop-item-details">
+                        <span>Calories</span>
+                        <span class="shop-item-price">265</span>
+                        <br>
+                        <span>Protein</span>
+                        <span class="shop-item-prices">18</span>
+                        <br>
+                        <span>Carbs</span>
+                        <span class="shop-item-pricess">2</span>
+                        <br>
+                        <span>Fat</span>
+                        <span class="shop-item-pricesss">20</span>
+                        <br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD </button>
+
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">NonFat Yoghurt</span>
+                    <img class="shop-item-image" src="/static/images/yog.jpg">
+                    <div class="shop-item-details">
+                        <span>Calories</span>
+                        <span class="shop-item-price">80</span>
+                        <br>
+                        <span>Protein</span>
+                        <span class="shop-item-prices">8</span>
+                        <br>
+                        <span>Carbs</span>
+                        <span class="shop-item-pricess">12</span>
+                        <br>
+                        <span>Fat</span>
+                        <span class="shop-item-pricesss">0</span>
+                        <br>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD </button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <section class="main_heading my-5">
+                <div class="text-center">
+                    <h5 class="display-4">Macros</h5>
+                    <hr class="w-25 mx-auto"></hr>
+                </div>
+            </section>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">CALORIES</span>
+                <span class="cart-price cart-header cart-column">PROTEIN</span>
+                <span class="cart-price cart-header cart-column">CARB</span>
+                <span class="cart-price cart-header cart-column">FAT</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">TOTAL</strong>
+                <span class="cart-total-price">0</span>
+                <span class="cart-total-prices">0</span>
+                <span class="cart-total-pricess">0</span>
+                <span class="cart-total-pricesss">0</span>
+            </div>
+            
+        </section>
+    </body>
+
+    <script>
+        function display() {
+            var element1 = document.getElementById("n2active");
+            if (element1.className == "shop-items"){
+                element1.classList.toggle("active");
+            }
+            
+            var element = document.getElementById("n1active");
+            element.classList.toggle("active");
+        }
+
+        function display2(){
+            var element = document.getElementById("n1active");
+            if (element.className == "shop-items"){
+                element.classList.toggle("active");
+            }
+            
+            var element1 = document.getElementById("n2active");
+            element1.classList.toggle("active");
+        }
+    </script>
+    <div class="text-center" style="margin-top: 10%;">
+        <p>© Copyright www.Mo-fit.in All Rights Reserved.</p>
+      </div>
+</html>
